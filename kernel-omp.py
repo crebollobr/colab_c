@@ -20,7 +20,7 @@ def c(line, cell):
 
         # Compilar o código C
         #compile_cmd = f"gcc {source_path} -o {binary_path} -fopenmp -std=c11 -fPIC -shared -rdynamic 2>&1"
-        compile_cmd = f"gcc {source_path} -o {binary_path}  2>&1"
+        compile_cmd = f"gcc {source_path} -o {binary_path} -fopenmp 2>&1"
         compile_process = subprocess.run(compile_cmd, shell=True, capture_output=True, text=True)
 
         if compile_process.returncode != 0:
